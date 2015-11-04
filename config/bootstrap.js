@@ -10,7 +10,8 @@
  */
 
 module.exports.bootstrap = function(cb) {
-
+  User.initData();
+  //console.log(sails.config);
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

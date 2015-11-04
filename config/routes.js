@@ -1,7 +1,5 @@
 module.exports.routes = {
-  '/': {
-    view: 'home'
-  },
+  '/': 'admin/HomeController',
   '/login': 'admin/AuthController',
   '/logout': 'admin/AuthController.logout',
   '/auth': 'admin/AuthController.auth'

@@ -2,11 +2,7 @@
   window.app.controller "NotificationCtrl",
     ['$scope',
      '$rootScope',
-     '$http',
-     'CsTool',
-     '$stateParams',
-     '$state',
-      ($scope, $rootScope, $http, CsTool, $stateParams, $state)->
+      ($scope, $rootScope)->
         $rootScope.notifications = []
         $scope.close = ($index)->
           $rootScope.notifications.splice($index, 1)

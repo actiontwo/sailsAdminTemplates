@@ -32,13 +32,12 @@ window.app.config [
   "$httpProvider",
   "HelpProvider"
   ($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, $HelpProvider) ->
-    $urlRouterProvider.otherwise('/')
-
-#    $stateProvider
-#    .state "find-user",
-#      url : "/find-user?email"
-#      template : Templates['hdviet.user.find.view']()
-#      controller : 'UserFindCtrl'
+    $urlRouterProvider.otherwise('/dashboard')
+    $stateProvider
+    .state "dashboard",
+      url : "/dashboard"
+      template : Templates['insight.dashboard.view']()
+      controller : 'DashboardCtrl'
 ]
 window.app.run ['$rootScope', '$window', 'editableOptions', 'Help', ($rootScope, $window, editableOptions, Help)->
   editableOptions.theme = 'bs3'

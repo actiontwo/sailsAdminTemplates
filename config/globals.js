@@ -8,6 +8,9 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.globals.html
  */
+uuid = require('node-uuid');
+md5 = require('MD5');
+_ = require('underscore');
 module.exports.globals = {
 
   /****************************************************************************
@@ -18,7 +21,7 @@ module.exports.globals = {
   *                                                                           *
   ****************************************************************************/
 
-	 _: true,
+	 //_: true,
 
   /****************************************************************************
   *                                                                           *

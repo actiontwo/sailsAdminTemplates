@@ -14,9 +14,6 @@
 
 module.exports = function (grunt) {
 
-	var templateFilesToInject = [
-		'.tmp/public/pages/**/*.html'
-	];
 
 	grunt.config.set('jst', {
 		dev: {

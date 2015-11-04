@@ -11,6 +11,7 @@
 // Path to public folder
 var tmpPath = '.tmp/public/';
 
+
 // CSS files to inject in order
 //
 // (if you're using LESS with the built-in default config, you'll want
@@ -24,16 +25,17 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-  // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
-
   // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/sails.io.js',
+  'js/dependencies/jquery-2.1.4.js',
+  'js/dependencies/angular.js',
   'js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js',
+  'js/templates.js',
   'pages/app.js',
+  'js/**/*.js',
   'pages/**/*.js'
 
   // Use the "exclude" operator to ignore files
@@ -51,7 +53,7 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+  'pages/**/*.html'
 ];
 
 
