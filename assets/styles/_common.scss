@@ -1,0 +1,31 @@
+#login {
+  margin-top: 10%;
+}
+
+#notification {
+  position: fixed;
+  z-index: 2;
+  width: 40%;
+  right: 10px;
+}
+
+.input-group-btn {
+  .btn {
+    box-shadow: none!important;
+    &:hover {
+      background: none;
+    }
+  }
+}
+.pagination{
+  margin: 0;
+}
+.text-{
+  &break {
+    word-break: break-all;
+  }
+  &limit-row{
+    max-height: 95px;
+    overflow-x: hidden;
+  }
+}

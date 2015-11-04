@@ -1,0 +1,7 @@
+extends layout
+block body
+  section#notification(ng-controller='NotificationCtrl')
+    div.alert.alert-dismissible(ng-repeat='noti in notifications' class='alert-{{noti.type}}')
+      button.close(type='button', ng-click='close($index)') ×
+      p {{noti.message}}
+  section.container(ui-view='')

@@ -1,0 +1,28 @@
+extends ../layout-login
+block body
+  section#login
+    div.container
+      div.col-md-4.col-md-offset-4
+        form.form-horizontal(action='/auth' method='POST')
+          fieldset
+            legend CS Tool
+            .form-group
+              label.col-lg-2.control-label(for='inputEmail') Email
+              .col-lg-10
+                input#inputEmail.form-control(type='email', placeholder='Email' name='email' ng-model='email' required)
+
+            .form-group
+              label.col-lg-2.control-label(for='inputPassword') Password
+              .col-lg-10
+                input#inputPassword.form-control(type='password', name='password',placeholder='Password' ng-model='password' required)
+
+            if message
+              .form-group
+                div.alert.alert-dismissible.alert-danger
+                  button.close(type='button') ×
+                  strong Oh snap!&nbsp
+                  a.alert-link(href='#')  #{message}
+
+            .form-group
+              .col-lg-10.col-lg-offset-2
+                button.btn.btn-primary(type='submit') Submit

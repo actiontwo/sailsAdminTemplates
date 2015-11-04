@@ -1,0 +1,26 @@
+nav.navbar.navbar-default(ng-controller='HeaderCtrl')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') CS-TOOL
+    div.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(ng-repeat='menu in menus' ui-sref-active="active")
+          a(ui-sref='{{menu.href}}') {{menu.title}}
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(ui-sref='profile')
+            i.fa.fa-user
+            | &nbsp#{name}
+        li
+          if isLogin
+            a(href='/logout')
+              | Logout&nbsp
+              i.fa.fa-sign-out
+          else
+            a(href='/login') Login

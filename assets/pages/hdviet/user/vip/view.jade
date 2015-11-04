@@ -1,0 +1,46 @@
+#user_vip
+  div.panel.panel-default
+    .panel-heading
+      h3.panel-title Quản lý vip
+    .panel-body
+      table.table.table-hover
+        tbody
+          tr
+            td Action
+            td
+              ul.list-inline
+                li.radio
+                  label
+                    input(type='radio', ng-model='action' value='them-ngay-vip')
+                    | Thêm ngày vip
+                li.radio
+                  label
+                    input(type='radio',ng-model='action' value='xoa-ngay-vip')
+                    | Xóa ngày vip
+                li.radio
+                  label
+                    input(type='radio',ng-model='action' value='chuyen-ngay-vip')
+                    | Chuyển ngày vip
+
+          tr
+            td Lý do
+            td
+              select.form-control(ng-model='reason')
+                option(ng-repeat="item in reasons" value="{{item.slug}}") {{item.name}}
+          tr(ng-show='action =="chuyen-ngay-vip"')
+            td Tài khoản chuyển đến
+            td
+              input.form-control(ng-model="accountTransfer" type="text" placeholder='Email, phone numer')
+
+          tr
+            td Số ngày vip
+            td
+              input.form-control(ng-model="vipDay" type="text")
+
+          tr
+            td Tin nhắn
+            td
+              textarea.form-control(rows='3' ng-model="message" placeholder='Tin nhắn')
+
+      div.form-group
+        include ../../../modules/save-button

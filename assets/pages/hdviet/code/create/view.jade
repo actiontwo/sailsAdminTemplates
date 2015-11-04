@@ -1,0 +1,45 @@
+section#dashboard-code.container
+  div.row
+    div.col-md-4
+      form.form-horizontal
+        fieldset
+          .form-group
+            label.col-lg-3.control-label(for='select') Lý do
+            .col-lg-9
+              select.form-control(name='mySelect', ng-options='option.name for option in reasons track by option.id', ng-model='reasonSelected')
+          .form-group
+            label.col-lg-3.control-label Số lượng
+            .col-lg-9
+              input.form-control(type='number', placeholder='Nhập số lượng code' ng-model='codeNumbers')
+          .form-group
+            label.col-lg-3.control-label Số ngày Vip
+            .col-lg-9
+              select.form-control(name='mySelect', ng-options='option.type_name + " (" + option.days + ") ngày" for option in codeTypes track by option.code_type_id', ng-model='codeTypeSelected')
+          .form-group
+            label.col-lg-3.control-label Email Nhận
+            .col-lg-9
+              input.form-control(type='email', placeholder='Ghi vào lịch sử giao dịch' ng-model='emailRecieve')
+          .form-group
+            label.col-lg-3.control-label Ghi chú
+            .col-lg-9
+              textarea.form-control(rows='3' ng-model='message')
+
+          .form-group
+            div.pull-left
+              a.btn.btn-success(href='javascript:;' ng-click='save()') Create
+    div.col-md-8
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th #
+            th Customer Email
+            th Code
+            th Giá trị sử dụng
+            th Sử dụng trước ngày
+        tbody
+          tr(ng-repeat='code in codesList.data')
+            td {{$index + 1}}
+            td huucuong1612@gmail.com
+            td {{code}}
+            td 10 ngày
+            td {{codesList.createAt*1000 | date:'dd/MM/yyyy'}}

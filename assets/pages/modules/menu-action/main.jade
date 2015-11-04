@@ -1,0 +1,5 @@
+ul.list-inline
+  li(ng-repeat='item in data')
+    a(ui-sref='{{item.href}}')
+      i(class='{{item.icon}}')
+      span(ng-if='title') &nbsp{{item.name}}

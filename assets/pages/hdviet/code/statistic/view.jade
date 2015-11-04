@@ -1,0 +1,46 @@
+section#dashboard-code.container
+  div.row
+    div.col-md-3
+      .form-group
+        label.control-label.text-success Vip code
+        input.form-control(type='text', placeholder='xxxxxxx')
+    div.col-md-3
+      .form-group
+        label.control-label.text-success  Start Date
+        input.form-control(type='date')
+    div.col-md-3
+      .form-group
+        label.control-label.text-success  End Date
+        input.form-control(type='date')
+    div.col-md-3
+      a.btn.btn-success(href='#') Search
+  hr
+  div.row
+    div.col-md-12
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th #
+            th Code
+            th Email
+            th Nguyên nhân
+            th Số ngày vip
+            th Thời gian tạo
+            th Thời gian nạp
+            th Người tạo
+            th Người nạp
+        tbody(ng-if='vips.length == 0')
+          tr
+            td(colspan='9').text-center
+              | Không có dữ liệu nào được tìm thấy!
+        tbody(ng-if='vips.length != 0')
+          tr
+            td 1
+            td X41RDH1N
+            td linhtd@hdviet.com
+            td Đề bù ngày VIP
+            td 1
+            td 13/10/2015 13:15:00
+            td Chưa dùng
+            td linhtd
+            td actiontwo

@@ -1,0 +1,36 @@
+#transaction-history.row
+  div.col-md-12
+    div.panel.panel-default
+      .panel-heading
+        h3.panel-title.text-uppercase Lịch sử giao dịch
+      .panel-body
+        uib-pagination.pagination-sm.pull-right(
+        total-items='totalItems',
+        ng-model='currentPage',
+        items-per-page='limit'
+        ng-change="pageChanged()"
+        max-size="5"
+        boundary-links="true"
+        rotate="false"
+        )
+        table.table.table-hover
+          thead
+            th(width='3%') #
+            th(width='15%') Thời gian
+            th(width='25%') Giao dịch
+            th(width='25%') Chi tiết
+            th(widht='10%') Trạng thái
+            th(width='20%') Note
+          tbody(ng-if='!userTransaction')
+            tr
+              td.align-center(colspan='6') Không có giao dịch nào!
+          tbody(ng-if='userTransaction')
+            tr(ng-repeat="item in userTransaction")
+              td {{$index+1 + limit*(currentPage - 1)}}
+              td {{item.created_date*1000 | date : formatDateTime}}
+              td {{item.reference}}
+              td {{item.message}}
+              td {{item.status == 7 ? 'Thành công':'Khởi Tạo'}}
+              td
+                p.text-break.text-limit-row(parse-note-user-transaction-history='{{item.note}}')
+

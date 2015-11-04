@@ -1,0 +1,12 @@
+section#dashboard-code.container
+  .page-header
+    h3.text-success Code
+
+  ul.nav.nav-tabs
+    li(ng-repeat='menu in menus' ui-sref-active="active")
+      a(ui-sref="{{menu.href}}") {{menu.title}}
+
+  div#tabContent.tab-content
+    br
+    div#tab-1.tab-pane.fade.active.in(ui-view="")
+      //- include user-vip-info
